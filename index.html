@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dakura - Bot Discord par Slayzox</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* INTRO CSS */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background: #0f0f10;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: hideIntro 0.8s ease-in-out 3s forwards;
+    }
+
+    #intro svg {
+      width: 130px;
+      height: 130px;
+      opacity: 0;
+      transform: scale(0.7);
+      animation: fadeZoom 1s ease-out 0.3s forwards;
+    }
+
+    #intro h1 {
+      color: white;
+      font-size: 2.8rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: glowText 1.5s ease-out 1.2s forwards;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes glowText {
+      0% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 15px #ffffff66;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 25px #ffffffcc;
+      }
+    }
+
+    @keyframes hideIntro {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* MAIN CONTENT */
+    body {
+      background: linear-gradient(135deg, #dae2f8, #d6a4a4);
+      color: #222;
+    }
+
+    #discord-logo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      height: 220px;
+      transform: translate(-50%, -50%);
+      opacity: 0.1;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 30px 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #5865f2;
+      margin-bottom: 0.2em;
+      font-weight: 900;
+    }
+
+    h2 {
+      color: #738adb;
+      margin-top: 0;
+      font-weight: 600;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5em;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANIMATION INTRO -->
+<div id="intro">
+  <svg viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" fill="white">
+    <path d="M104.4 122.3c-5.7 0-10.2 5-10.2 11.2s4.6 11.2 10.2 11.2c5.7 0 10.3-5 10.2-11.2 0-6.1-4.6-11.2-10.2-11.2zm36.2 0c-5.7 0-10.2 5-10.2 11.2s4.6 11.2 10.2 11.2c5.7 0 10.2-5 10.2-11.2s-4.6-11.2-10.2-11.2z"/>
+    <path d="M189.5 20H55.6C25 20 6.7 49.3 7 49.7l5 103.2c0 8.4 8.3 15.2 18.7 15.2h122.7l-5.8-20.5c12.2-2.4 21.3-11.6 23.4-23.3l-4.1-37.2-17.4 15.7 9.9 21.8-22.7 19.7 4.7-45.8 21.6-19.6z"/>
+  </svg>
+  <h1>Dakura</h1>
+</div>
+
+<!-- LOGO FLOTTANT -->
+<svg id="discord-logo" viewBox="0 0 245 240" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5865f2" stroke-width="5">
+  <path d="M104.4 122.3c-5.7 0-10.2 5-10.2 11.2s4.6 11.2 10.2 11.2c5.7 0 10.3-5 10.2-11.2 0-6.1-4.6-11.2-10.2-11.2zm36.2 0c-5.7 0-10.2 5-10.2 11.2s4.6 11.2 10.2 11.2c5.7 0 10.2-5 10.2-11.2s-4.6-11.2-10.2-11.2z"/>
+  <path d="M189.5 20H55.6C25 20 6.7 49.3 7 49.7l5 103.2c0 8.4 8.3 15.2 18.7 15.2h122.7l-5.8-20.5c12.2-2.4 21.3-11.6 23.4-23.3l-4.1-37.2-17.4 15.7 9.9 21.8-22.7 19.7 4.7-45.8 21.6-19.6z"/>
+</svg>
+
+<!-- CONTENU PRINCIPAL -->
+<main>
+  <header>
+    <h1>Dakura - Bot Discord</h1>
+    <h2>Créé par Slayzox</h2>
+    <p>Le bot tout-en-un pour la messagerie privée et bien plus</p>
+  </header>
+
+  <section>
+    <p><strong>Dakura</strong> est un bot Discord innovant...</p>
+    <ul>
+      <li>Messages de bienvenue automatisés</li>
+      <li>Notifications ciblées</li>
+      <li>Tableau de bord de configuration</li>
+      <li>Système anti-raid/anti-spam</li>
+      <li>Intégration API/webhooks</li>
+    </ul>
+    <p>Dakura améliore l’expérience utilisateur et soulage les modérateurs. Rejoignez-nous !</p>
+  </section>
+
+  <footer>
+    © 2025 Dakura - Bot Discord développé par Slayzox
+  </footer>
+</main>
+
+</body>
+</html>
